@@ -1,0 +1,8 @@
+These are numbered in an order you can complete them in. So "waveform2" doesn't indicate 2 waveform files, but that the "waveform2" file is the second file
+
+Keep in mind you'll need to rename these files to "config.ini" and put them in the ./data directory of BitstreamEvolution. Semicolons denote comments, so you can leave the notes in there. 
+(If for some reason these files are giving errors, you can copy+paste the "default_config.ini" file to use as your config, and refer to the notes in these sample files to set up your parameters properly)
+
+The simulation modes are planned to be renamed, so don't let the naming confuse you. One of them has even completely changed in functionality since it was named so the way they function does not line up with the original vision for the simulation modes.
+
+There are potential bugs with the auto-run and existing population settings, so if you try to use those and experience issues, I'm looking into them
