@@ -1,0 +1,1 @@
+Ran with a DHT22 sensor (temp + humidity) connected to the Arduino. The sensor was never being read from, but I noticed that when I briefly unplugged at multiple points throughout this experiment, the recorded pulses would drop by about 30k. Either we evolved a radio or the Arduino is just so volatile?
