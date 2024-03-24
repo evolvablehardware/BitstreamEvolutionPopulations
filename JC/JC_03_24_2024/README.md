@@ -1,4 +1,8 @@
-test workspace  
+test workspace formatter and plots  
+-----
+![1_main.png](plots/1_main.png)
+![3_violin_plots.png](plots/3_violin_plots.png)
+![4_heatmap.png](plots/4_heatmap.png)
 -----
 #### [TOP-LEVEL PARAMETERS]  
 | Param | Value |  
@@ -61,7 +65,7 @@ show_ovr_best | true
 |---|---|  
 fpga | i:0x0403:0x6010:0  
 usb_path | /dev/ttyUSB2  
-auto_upload_to_arduino | false  
+auto_upload_to_arduino | true  
 #### [HARDWARE PARAMETERS]  
 | Param | Value |  
 |---|---|  
@@ -83,7 +87,3 @@ sensitivity_time | 24:00:00
 |---|---|  
 transfer_interval | IGNORE  
 fpga2 | i:0x0403:0x6010:0  
------
-![heatmap.png](plots/heatmap.png)
-![violin_plots.png](plots/violin_plots.png)
-![main.png](plots/main.png)
