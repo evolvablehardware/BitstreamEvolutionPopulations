@@ -422,7 +422,7 @@ class Config:
 	
 	def get_diversity_measure(self):
 		input = self.get_ga_parameters("DIVERSITY_MEASURE")
-		valid_vals = ["HAMMING_DIST", "UNIQUE", "NONE", "DIFFERING_BITS"]
+		valid_vals = ["HAMMING_DIST", "UNIQUE", "NONE"]
 		self.check_valid_value("diversity measure", input, valid_vals)
 		return input
 	
@@ -511,11 +511,11 @@ class Config:
 
 	def get_sensitivity_time(self):
 		try:
-			date_time = datetime.strptime(self.get_sensitivity_parameters("SENSITIVITY_TIME"), '%j:%H:%M:%S')
-			seconds = 86400*date_time.day + 3600*date_time.hour + 60*date_time.minute + date_time.second
+			date_time = datetime.strptime(self.get_sensitivity_parameters("SENSITIVITY_TIME"), '%H:%M:%S')
+			seconds = 3600*date_time.hour + 60*date_time.minute + date_time.second
 			print(seconds)
 		except ValueError:
-			self.__log_warning(1, "Invalid value for the amount of time to sensitivity trials. Should be in the format %-j:%H:%M:%S. Program will not terminate based on the amount of time passed")
+			self.__log_warning(1, "Invalid value for the amount of time to sensitivity trials. Program will not terminate based on the amount of time passed")
 			return "IGNORE"
 		if seconds < 0:
 			self.__log_error(1, "Invalid amount of time to do sensitivity trials: " + str(seconds) + "'. Must be greater than zero.")
@@ -566,21 +566,6 @@ class Config:
 			return input == "true" or input == "True"
 		except NoOptionError:
 			return True	
-
-	def saving_population_bistream(self):
-		return isinstance(self.get_population_bistream_save_interval(), int)	
-	
-		
-	def get_population_bistream_save_interval(self):
-		try:
-			interval = int(self.get_logging_parameters("population_bitstream_save_interval"))
-		except:
-			return "IGNORE"
-		if interval < 1:
-			self.__log_error(1, "Invalid population bistream save interval " + str(interval) + "'. Must be greater than zero.")
-			exit()
-		return interval
-			
 	
 	def get_output_directory(self):
 		try:
